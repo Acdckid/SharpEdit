@@ -24,7 +24,27 @@ namespace SharpEdit
             //Need to Add rich text box and have it fill page
             RichTextBox newPage = new RichTextBox();
             NewPage.Controls.Add(newPage);
+            newPage.MaximumSize = new System.Drawing.Size(10000, 10000);
+            newPage.Height = ((newPage.Height - this.Height) * -1)+10;
+            newPage.Width = ((newPage.Width-this.Width) * -1)+100;
+            newPage.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Left);
+            
+
+
+
 
         }
+
+        private void getHeightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(this.Height.ToString());
+            MessageBox.Show(richTextBox1.Height.ToString());
+            MessageBox.Show(this.Width.ToString());
+            MessageBox.Show(richTextBox1.Width.ToString());
+
+
+        }
+
+       
     }
 }
